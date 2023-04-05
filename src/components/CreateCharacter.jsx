@@ -52,19 +52,16 @@ const CreateCharacter = props => {
       initiative: parseInt(initiative),
       armor_class: parseInt(armor_class)
     };
-    fetch('/',{
+    fetch('/create',{
       method:'POST',
       headers: {
         'Content-Type': 'Application/JSON'
       },
       body: JSON.stringify(body)
-    })
+    }).then(res => console.log(res))
       .then(res => res.json())
       .then(data => {
-        console.log(data);
-      })
-      .then(()=>{
-        props.history.push('/');
+        return data;
       })
       .catch(err => console.log('CreateCharacter fetch ERROR: ',err));
   };

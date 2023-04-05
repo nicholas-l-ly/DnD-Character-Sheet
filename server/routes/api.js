@@ -6,7 +6,7 @@ const characterController = require('../controllers/characterController');
 const router = express.Router();
 
 // create character
-router.post('/', 
+router.post('/create', 
   characterController.createCharacter,
   (req,res) => res.status(200).json(res.locals.test)
 );

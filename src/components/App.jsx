@@ -11,7 +11,6 @@ const App = props => {
       <h1>Solo Project</h1>
       <main>
         <BrowserRouter>
-   
           <Switch>
             <Route 
               exact 
@@ -23,7 +22,7 @@ const App = props => {
               path="/create"
               component={CreateCharacter}
             />
-          </Switch>
+          </Switch> 
         </BrowserRouter>
       </main>
     </div>
