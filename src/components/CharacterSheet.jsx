@@ -1,21 +1,28 @@
 import React, {Component} from 'react';
 import {Link, withRouter} from 'react-router-dom';
-import { useEffect,useState } from 'react';
+import { useEffect ,useState } from 'react';
 
 
 const CharacterSheet = props =>{
-  const [characterList, setcharacterList] = useState(null);
+  const [characterList, setcharacterList] = useState([]);
+
+  function getList(){
   
-  useEffect(() => {
-    fetch('/get').then(res => res.json()).then(
-      (data) =>{
-        setcharacterList(data);
-      }
-    ).catch(err => console.log('Character List fetch ERROR: ',err));
-  },[characterList]);
-
-
-
+    fetch('/get')
+      .then(res => {
+        const result = res.json();
+        console.log(result);
+      })
+      .then(
+        (data) =>{
+          console.log(data);
+          // setcharacterList(data);
+        }
+      ).catch(err => console.log('Character List fetch ERROR: ',err));
+  }
+  
+  getList();
+  
 
   return(
     <div>

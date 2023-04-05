@@ -1,4 +1,4 @@
-const models = require('../models/characterModel');
+const model = require('../models/characterModel');
 
 const characterController = {};
 
@@ -8,7 +8,7 @@ characterController.createCharacter = (req,res,next) => {
   const {
     name,
     level,
-    class_,
+    classtype,
     race,
     total_hp,
     current_hp,
@@ -22,8 +22,8 @@ characterController.createCharacter = (req,res,next) => {
     initiative,
     armor_class} = req.body;
 
-  models.Character.create({
-    name, level, class_,
+  model.Character.create({
+    name, level, classtype,
     race, total_hp, current_hp, strength,
     dexterity, constitution, intelligence, wisdom,
     charisma, speed, initiative, armor_class
@@ -44,14 +44,14 @@ characterController.createCharacter = (req,res,next) => {
 
 characterController.getCharacter = (req,res,next) => {
   
-  models.Character.find().then((result) => {
-
-    res.locals.getCharacters = result;
-    console.log(res.locals.getCharacters);
-  })
+  model.Character.find({})
+    .then((result) => {
+      res.locals.getCharacters = result;
+      console.log(res.locals.getCharacters);
+    })
     .catch(
       (err) =>{
-        return next(
+        return next(          
           {
             log: 'Error caught in character creation MW',
             status: 400,
@@ -68,10 +68,10 @@ characterController.updateCharacter = async (req,res,next) => {
 
 characterController.deleteCharacter = async (req,res,next) => {
   const {name} = req.body;
-  models.Character.findOneAndDelete({name:name})
+  model.Character.findOneAndDelete({name:name})
     .then((result) => {
       res.locals.deleteCharacter = result;
-      return next();
+      console.log('deleted: ', res.locals.deleteCharacter);
     }).catch((err)=>{
       return next(
         {

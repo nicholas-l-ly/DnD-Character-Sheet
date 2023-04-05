@@ -18,7 +18,7 @@ function CreateCharacter () {
 
   const [name, nameOnChange ] = useInput('');// name: String,
   const [level, levelOnChange] = useInput('');// level: Number,
-  const [class_, class_OnChange] = useInput('');// class: String,
+  const [classtype, classtypeOnChange] = useInput('');// class: String,
   const [race, raceOnChange] = useInput('');  // race: String,
   const [total_hp, total_hpOnChange] = useInput('');   // total_hp: Number,
   const [current_hp, current_hpOnChange] = useInput('');   // current_hp: Number,
@@ -36,20 +36,20 @@ function CreateCharacter () {
   const saveCharacter = () => {
     const body = {
       name,
-      level: parseInt(level),
-      class_,
+      level,
+      classtype,
       race,
-      total_hp: parseInt(total_hp),
-      current_hp: parseInt(current_hp),
-      strength: parseInt(strength),
-      dexterity: parseInt(dexterity),
-      constitution: parseInt(constitution),
-      intelligence: parseInt(intelligence),
-      wisdom: parseInt(wisdom),
-      charisma: parseInt(charisma),
-      speed: parseInt(speed),
-      initiative: parseInt(initiative),
-      armor_class: parseInt(armor_class)
+      total_hp,
+      current_hp,
+      strength,
+      dexterity,
+      constitution,
+      intelligence,
+      wisdom,
+      charisma,
+      speed,
+      initiative,
+      armor_class
     };
     fetch('/create',{
       method:'POST',
@@ -58,8 +58,8 @@ function CreateCharacter () {
       },
       body: JSON.stringify(body)
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data)=> {
         console.log(data);
       })
       .catch(err => console.log('CreateCharacter fetch ERROR: ',err));
@@ -83,8 +83,8 @@ function CreateCharacter () {
           <input name="level" placeholder="Your Character level" value={level} onChange={levelOnChange} />
         </div>
         <div className="createCharFields">
-          <label htmlFor="class_">class_: </label>
-          <input name="class_" placeholder="Your Character class_" value={class_} onChange={class_OnChange} />
+          <label htmlFor="classtype">classtype: </label>
+          <input name="classtype" placeholder="Your Character class_" value={classtype} onChange={classtypeOnChange} />
         </div>
         <div className="createCharFields">
           <label htmlFor="race">race: </label>

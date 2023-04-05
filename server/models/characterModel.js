@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const characterSchema = new Schema({
   name: String,
   level: Number,
-  class_: String,
+  classtype: String,
   race: String,
   total_hp: Number,
   current_hp: Number,

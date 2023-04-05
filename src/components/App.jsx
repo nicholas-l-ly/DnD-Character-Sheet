@@ -3,20 +3,12 @@ import {BrowserRouter,Switch,Route } from 'react-router-dom';
 import CreateCharacter from './CreateCharacter';
 import CharacterSheet from './CharacterSheet';
 import { useEffect } from 'react';
+import DeleteCharacter from './DeleteCharacter';
 
 
 
 function App(){
-  // const [characterList, setcharacterList] = useState();
 
-
-  // useEffect(() => {
-  //   fetch('/')
-  //     .then(response => response.json())
-  //     .then((char)=>{
-  //       setcharacterList(char);
-  //     });
-  // },[]);
 
 
   return(
@@ -35,6 +27,11 @@ function App(){
               exact
               path="/create"
               component={CreateCharacter}
+            />
+            <Route
+              exact
+              path="/delete"
+              component={DeleteCharacter}
             />
           </Switch> 
         </BrowserRouter>

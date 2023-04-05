@@ -12,15 +12,13 @@ router.post('/create',
 );
 
 // get character router
-// router.get('/get',
-//   characterController.getCharacter,
-//   (req,res) => res.status(200).json(res.locals.getCharacter)
-// );
-
 router.get('/get',
   characterController.getCharacter,
-  (req,res)=>res.status(200).json(res.locals.getCharacters)
-);
+  (req,res) => res.status(200).json(res.locals.getCharacter));
+// router.get('/get',
+//   characterController.getCharacter,
+//   (req,res) => res.status(200).json(res.locals.getCharacters)
+// );
 
 
 router.delete('/delete',
@@ -28,9 +26,9 @@ router.delete('/delete',
   (req,res) => res.status(200).json(res.locals.deleteCharacter)
 );
 
-router.patch('/',
-  characterController.updateCharacter,
-  (req,res) => res.status(200)
-);
+// router.patch('/',
+//   characterController.updateCharacter,
+//   (req,res) => res.sendStatus(200)
+// );
 
 module.exports = router;
