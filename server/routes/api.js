@@ -8,14 +8,13 @@ const router = express.Router();
 // create character
 router.post('/', 
   characterController.createCharacter,
-  (req,res) => res.status(200)
+  (req,res) => res.status(200).json(res.locals.test)
 );
 
 // may have to use a req.params to change to id name later and route to character but first not yet
 router.get('/', 
-  characterController.getCharacter,
-  (req,res) => res.status(200).json(res.locals.character) // need to send char from database
-
+  characterController.createCharacter,
+  (req,res) => res.status(200).json(res.locals.test)
 );
 
 router.delete('/',
