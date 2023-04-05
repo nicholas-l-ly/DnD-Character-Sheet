@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
+import {BrowserRouter,Switch,Route } from 'react-router-dom';
 import CreateCharacter from './CreateCharacter';
 import CharacterSheet from './CreateCharacter';
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-  Switch
-} from 'react-router-dom';
+
 
 
 const App = props => {
@@ -15,18 +10,21 @@ const App = props => {
     <div className='router'>
       <h1>Solo Project</h1>
       <main>
-        <Switch>
-          <Route
-            exact
-            path="/"
-            component={CharacterSheet}
-          />
-          <Route
-            exact
-            path="/"
-            component={CreateCharacter}
-          />
-        </Switch>
+        <BrowserRouter>
+   
+          <Switch>
+            <Route 
+              exact 
+              path="/"
+              component={CharacterSheet}
+            />
+            <Route
+              exact
+              path="/create"
+              component={CreateCharacter}
+            />
+          </Switch>
+        </BrowserRouter>
       </main>
     </div>
   );
