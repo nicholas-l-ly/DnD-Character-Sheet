@@ -1,17 +1,31 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import {BrowserRouter,Switch,Route } from 'react-router-dom';
 import CreateCharacter from './CreateCharacter';
-import CharacterSheet from './CreateCharacter';
+import CharacterSheet from './CharacterSheet';
+import { useEffect } from 'react';
 
 
 
-const App = props => {
+function App(){
+  // const [characterList, setcharacterList] = useState();
+
+
+  // useEffect(() => {
+  //   fetch('/')
+  //     .then(response => response.json())
+  //     .then((char)=>{
+  //       setcharacterList(char);
+  //     });
+  // },[]);
+
+
   return(
     <div className='router'>
       <h1>Solo Project</h1>
       <main>
         <BrowserRouter>
           <Switch>
+            {/* <CharacterSheet/> */}
             <Route 
               exact 
               path="/"
@@ -27,6 +41,6 @@ const App = props => {
       </main>
     </div>
   );
-};
+}
 
 export default App;

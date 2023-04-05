@@ -28,6 +28,20 @@ module.exports = {
       }
     ]
   },
+
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, './dist'),
+      publicPath: '/dist',
+    },
+    compress: true,
+    port: 8080,
+    proxy: {
+      '/**':'http://localhost:3000/'
+    }
+  },
+
+
   resolve: {
     extensions: ['.js', '.jsx']
   }

@@ -14,8 +14,7 @@ const useInput = init => {
 };
 
 // create component and use useInput to handle input as state
-const CreateCharacter = props => {
-
+function CreateCharacter () {
 
   const [name, nameOnChange ] = useInput('');// name: String,
   const [level, levelOnChange] = useInput('');// level: Number,
@@ -58,22 +57,20 @@ const CreateCharacter = props => {
         'Content-Type': 'Application/JSON'
       },
       body: JSON.stringify(body)
-    }).then(res => console.log(res))
+    })
       .then(res => res.json())
       .then(data => {
-        return data;
+        console.log(data);
       })
       .catch(err => console.log('CreateCharacter fetch ERROR: ',err));
   };
+  // bracket above is forr save char fxn
+
   return (
     <section className="mainSection createCharContainer">
       <header className="pageHeader">
         <h2>Character Creator</h2>
-        <Link to="/" className="backLink">
-          <button type="button" className="btnSecondary">
-                  Back to all characters
-          </button>
-        </Link>
+
       </header>
       <article className="card createChar">
         <h3>Enter your character details</h3>
@@ -143,12 +140,15 @@ const CreateCharacter = props => {
                 Cancel
             </button>
           </Link>
-          <button type="button" className="btnMain" onClick={saveCharacter}>Save</button>
+          <Link to="/">
+            <button type="button" className="btnMain" onClick={saveCharacter}>Save</button>
+          </Link>
         </div>
       </article>
     </section>
   
   );
-};
+}
 
 export default withRouter(CreateCharacter);
+// export default CreateCharacter;
