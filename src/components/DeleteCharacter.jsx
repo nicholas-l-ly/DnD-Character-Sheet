@@ -36,13 +36,16 @@ function DeleteCharacter(){
           <label htmlFor="name">Name: </label>
           <input name="name" placeholder="Your Character name" value={name} onChange={nameOnChange} />
         </div>
-        <Link to="/" className="backLink">
-          <button type="button" className="btnSecondary">
+        <div className='action-buttons'>
+
+     
+          <Link to="/" className="backLink">
+            <button type="button" className="btnSecondary">
                 Cancel
-          </button>
-        </Link>
-        <button type="button" className="btnMain" onClick={deleteCharacter}>Delete</button>
- 
+            </button>
+          </Link>
+          <button type="button" className="btnMain" onClick={deleteCharacter}>Delete</button>
+        </div>
       </article>
     </section>
         

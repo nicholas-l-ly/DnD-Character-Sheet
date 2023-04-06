@@ -42,12 +42,12 @@ function SpellList ({classtype,level}) {
 
 
   return(
-    <section>
+    <article>
       <h1>Spell List</h1>
       
       {spellList}
 
-    </section>
+    </article>
   );
 }
 
