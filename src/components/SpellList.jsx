@@ -6,8 +6,8 @@ import LevelContainer from './LevelContainer';
 // https://www.dnd5eapi.co/api/classes/${classtype}/levels/${level}
 // `https://www.dnd5eapi.co/api/classes/${classtype}/levels/${level}`
 function SpellList ({classtype,level}) {
-  const spellList = [];
-    
+//   const spellList = [];
+  const [spellList, setSpellList] = useState([]);
 
   // create a fetch request that will map an array of spell slots
   useEffect(()=>{
@@ -19,24 +19,27 @@ function SpellList ({classtype,level}) {
       .then(data => {
       // console.log(data.spellcasting);
       // console.log(data.spellcasting.cantrips_known);
-    
+        const spellHolder = [];
+        let spellLevel = 0;
         for (const key in data.spellcasting){
           if (data.spellcasting[key] > 0){
-            console.log(data.spellcasting);
-            spellList.push(
+            // console.log(data.spellcasting);
+            spellHolder.push(
               <LevelContainer
-                spellLevel = {key}
+                spellLevelName = {key}
                 slots = {data.spellcasting[key]}
+                classtype = {classtype}
+                spellLevel = {spellLevel}
               />
-                
             );
           }
-
+          spellLevel++;
         }
+        setSpellList(spellHolder);
       });
 
   },[{}]);
-  console.log(spellList);
+
 
   return(
     <section>

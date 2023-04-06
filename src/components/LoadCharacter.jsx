@@ -31,10 +31,8 @@ const LoadCharacter = () => {
   const [armor_class, armor_classOnChange] = useState('0');
 
 
-
-
   const loadCharacter = () =>{
-
+    
     fetch(`/load/${name}`, {
       method:'GET',
     }).then(res => res.json())
@@ -74,6 +72,7 @@ const LoadCharacter = () => {
       });
     // add a catch 
   };
+  
   const body = {
     name,
     level,
@@ -100,9 +99,6 @@ const LoadCharacter = () => {
       },
       body: JSON.stringify(body)
     }).then((res) => res.json())
-      .then((data )=> {
-        console.log(data);
-      })
       .catch(err => console.log('UpdateCharacter fetch ERROR: ',err));
     
   };
