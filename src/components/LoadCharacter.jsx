@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import SpellList from './SpellList';
+import LevelContainer from './LevelContainer';
+import Spell from './Spell';
 
 const useInput = init => {
   const [ value, setValue ] = useState(init);
@@ -36,7 +39,6 @@ const LoadCharacter = () => {
       method:'GET',
     }).then(res => res.json())
       .then(data =>{
-        console.log(data);
         const {
           name,
           level,
@@ -70,7 +72,7 @@ const LoadCharacter = () => {
         wisdomOnChange(wisdom);
         armor_classOnChange(armor_class);
       });
-
+    // add a catch 
   };
   const body = {
     name,
@@ -142,8 +144,14 @@ const LoadCharacter = () => {
           <li>initiative: {initiative}<button onClick={()=>initiativeOnChange(initiative + 1)}>+</button></li>
           <li>armor_class: {armor_class} <button onClick={()=>armor_classOnChange(armor_class + 1)}>+</button></li>
         </ul>
+        <div>
 
- 
+          <SpellList
+            classtype ={classtype}
+            level = {level}
+          />
+
+        </div>
       </article>
     </section>
   );

@@ -88,7 +88,7 @@ characterController.saveCharacter = async (req,res,next) => {
     race, total_hp, current_hp, strength,
     dexterity, constitution, intelligence, wisdom,
     charisma, speed, initiative, armor_class
-  }).then(result => {res.locals.createCharacter = result;
+  }).then(result => {res.locals.updateCharacter = result;
     return next();})
     .catch(
       (err) => {
