@@ -3,7 +3,6 @@ import React, {useEffect, useState} from 'react';
 
 function Spell ({spellLevel,classtype}) {
   const [spellOptions,setSpellOptions] = useState([]);
-  // console.log(spellLevel,classtype);
 
 
   useEffect( ()=> {

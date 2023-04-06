@@ -2,10 +2,10 @@ import React, { Component, useState } from 'react';
 import {BrowserRouter,Switch,Route } from 'react-router-dom';
 import CreateCharacter from './CreateCharacter';
 import CharacterSheet from './CharacterSheet';
-import { useEffect } from 'react';
 import DeleteCharacter from './DeleteCharacter';
 import LoadCharacter from './LoadCharacter';
 
+import '../styles.css';
 
 
 function App(){
@@ -14,7 +14,6 @@ function App(){
 
   return(
     <div className='router'>
-      <h1>DND</h1>
       <main>
         <BrowserRouter>
           <Switch>

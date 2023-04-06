@@ -67,7 +67,7 @@ function CreateCharacter () {
   // bracket above is forr save char fxn
 
   return (
-    <section className="mainSection createCharContainer">
+    <section className="mainSection CharContainer">
       <header className="pageHeader">
         <h2>Character Creator</h2>
 
@@ -83,7 +83,7 @@ function CreateCharacter () {
           <input name="level" placeholder="Your Character level" value={level} onChange={levelOnChange} />
         </div>
         <div className="createCharFields">
-          <label htmlFor="classtype">classtype: </label>
+          <label htmlFor="classtype">class: </label>
           <input name="classtype" placeholder="Your Character class_" value={classtype} onChange={classtypeOnChange} />
         </div>
         <div className="createCharFields">

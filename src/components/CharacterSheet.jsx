@@ -26,22 +26,24 @@ const CharacterSheet = props =>{
 
   return(
     <div>
-      <h1>Character Sheet</h1>
-      <Link to={'/create'}>
-        <button type='button' className='btnSecondary'>
+      <h1 className='character-sheet'>DND Character Sheet</h1>
+      <section className='action-buttons'>
+        <Link to={'/create'}>
+          <button type='button' className='btnSecondary'>
           Create Character
-        </button>
-      </Link>
-      <Link to={'/load'}>
-        <button type='button' className='btnSecondary'>
+          </button>
+        </Link>
+        <Link to={'/load'}>
+          <button type='button' className='btnSecondary'>
           Load Character
-        </button>
-      </Link>
-      <Link to={'/delete'}>
-        <button type='button' className='btnSecondary'>
+          </button>
+        </Link>
+        <Link to={'/delete'}>
+          <button type='button' className='btnSecondary'>
           Delete Character
-        </button>
-      </Link>
+          </button>
+        </Link>
+      </section>
     </div>
   );
 };

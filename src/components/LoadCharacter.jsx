@@ -105,7 +105,7 @@ const LoadCharacter = () => {
 
 
   return(
-    <section className='mainSection LoadCharContainer'>
+    <section className='mainSection CharContainer'>
         
       <h2>Load Character</h2>
       <article>
@@ -114,31 +114,34 @@ const LoadCharacter = () => {
           <label htmlFor="name">Name: </label>
           <input name="name" placeholder="Your Character name" value={name} onChange={nameOnChange} />
         </div>
-        <Link to="/" className="backLink">
-          <button type="button" className="btnSecondary">
+        <div className='action-buttons'> 
+
+          <Link to="/" className="backLink">
+            <button type="button" className="btnSecondary">
                 Cancel
-          </button>
-        </Link>
-        <button type="button" className="btnMain" onClick={loadCharacter}>Load</button>
-        <button type="button" className="btnMain" onClick={saveCharacter}>Save</button>
+            </button>
+          </Link>
+          <button type="button" className="btnMain" onClick={loadCharacter}>Load</button>
+          <button type="button" className="btnMain" onClick={saveCharacter}>Save</button>
+        </div>
         <div className="charHeadContainer">
           <h3 className="charName">{name}</h3>
         </div>
         <ul>
-          <li>class: {classtype}</li>
-          <li>race: {race}</li>
-          <li>level: {level} <button onClick={()=>levelOnChange(level + 1)}>+</button></li>
-          <li>total_hp: {total_hp} <button onClick={()=>total_hpOnChange(total_hp + 1)}>+</button></li>
-          <li>current_hp: {current_hp} <button onClick={()=>current_hpOnChange(current_hp + 1)}>+</button></li>
-          <li>strength: {strength} <button onClick={()=>strengthOnChange(strength + 1)}>+</button></li>
-          <li>dexterity: {dexterity} <button onClick={()=>dexterityOnChange(dexterity + 1)}>+</button></li>
-          <li>constitution: {constitution}<button onClick={()=>constitutionOnChange(constitution + 1)}>+</button></li>
-          <li>intelligence: {intelligence}<button onClick={()=>intelligenceOnChange(intelligence + 1)}>+</button></li>
-          <li>wisdom: {wisdom}<button onClick={()=>wisdomOnChange(wisdom + 1)}>+</button></li>
-          <li>charisma: {charisma}<button onClick={()=>charismaOnChange(charisma + 1)}>+</button></li>
-          <li>speed: {speed} <button onClick={()=>speedOnChange(speed + 1)}>+</button></li>
-          <li>initiative: {initiative}<button onClick={()=>initiativeOnChange(initiative + 1)}>+</button></li>
-          <li>armor_class: {armor_class} <button onClick={()=>armor_classOnChange(armor_class + 1)}>+</button></li>
+          <li>     class: {classtype}</li>
+          <li>     race: {race}</li>
+          <li><button className='btnMain ' onClick={()=>levelOnChange(level + 1)}>+</button>     level: {level} </li>
+          <li><button className='btnMain ' onClick={()=>total_hpOnChange(total_hp + 1)}>+</button>     total_hp: {total_hp} </li>
+          <li><button className='btnMain ' onClick={()=>current_hpOnChange(current_hp + 1)}>+</button>     current_hp: {current_hp} </li>
+          <li><button className='btnMain ' onClick={()=>strengthOnChange(strength + 1)}>+</button>     strength: {strength} </li>
+          <li><button className='btnMain ' onClick={()=>dexterityOnChange(dexterity + 1)}>+</button>     dexterity: {dexterity} </li>
+          <li><button className='btnMain ' onClick={()=>constitutionOnChange(constitution + 1)}>+</button>     constitution: {constitution}</li>
+          <li><button className='btnMain ' onClick={()=>intelligenceOnChange(intelligence + 1)}>+</button>     intelligence: {intelligence}</li>
+          <li><button className='btnMain ' onClick={()=>wisdomOnChange(wisdom + 1)}>+</button>     wisdom: {wisdom}</li>
+          <li><button className='btnMain ' onClick={()=>charismaOnChange(charisma + 1)}>+</button>     charisma: {charisma}</li>
+          <li><button className='btnMain ' onClick={()=>speedOnChange(speed + 1)}>+</button>     speed: {speed} </li>
+          <li><button className='btnMain ' onClick={()=>initiativeOnChange(initiative + 1)}>+</button>     initiative: {initiative}</li>
+          <li><button className='btnMain ' onClick={()=>armor_classOnChange(armor_class + 1)}>+</button>     armor_class: {armor_class} </li>
         </ul>
         <div>
 
