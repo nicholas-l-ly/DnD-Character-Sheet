@@ -4,6 +4,7 @@ import CreateCharacter from './CreateCharacter';
 import CharacterSheet from './CharacterSheet';
 import { useEffect } from 'react';
 import DeleteCharacter from './DeleteCharacter';
+import LoadCharacter from './LoadCharacter';
 
 
 
@@ -17,7 +18,6 @@ function App(){
       <main>
         <BrowserRouter>
           <Switch>
-            {/* <CharacterSheet/> */}
             <Route 
               exact 
               path="/"
@@ -32,6 +32,11 @@ function App(){
               exact
               path="/delete"
               component={DeleteCharacter}
+            />
+            <Route
+              exact
+              path="/load"
+              component={LoadCharacter}
             />
           </Switch> 
         </BrowserRouter>

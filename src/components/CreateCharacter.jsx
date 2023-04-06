@@ -59,7 +59,7 @@ function CreateCharacter () {
       body: JSON.stringify(body)
     })
       .then((res) => res.json())
-      .then((data)=> {
+      .then((data )=> {
         console.log(data);
       })
       .catch(err => console.log('CreateCharacter fetch ERROR: ',err));

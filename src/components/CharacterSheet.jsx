@@ -6,28 +6,27 @@ import { useEffect ,useState } from 'react';
 const CharacterSheet = props =>{
   const [characterList, setcharacterList] = useState([]);
 
-  function getList(){
+  // function getList(){
   
-    fetch('/get')
-      .then(res => {
-        const result = res.json();
-        console.log(result);
-      })
-      .then(
-        (data) =>{
-          console.log(data);
-          // setcharacterList(data);
-        }
-      ).catch(err => console.log('Character List fetch ERROR: ',err));
-  }
+  //   fetch('/get')
+  //     .then(res => {
+  //       const result = res.json();
+  //       console.log(result);
+  //     })
+  //     .then(
+  //       (data) =>{
+  //         console.log(data);
+  //         // setcharacterList(data);
+  //       }
+  //     ).catch(err => console.log('Character List fetch ERROR: ',err));
+  // }
   
-  getList();
+  // getList();
   
 
   return(
     <div>
       <h1>Character Sheet</h1>
-      <select name='Choose your character'>{characterList}</select>
       <Link to={'/create'}>
         <button type='button' className='btnSecondary'>
           Create Character

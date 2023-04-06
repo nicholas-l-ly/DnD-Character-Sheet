@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+
 const useInput = init => {
   const [ value, setValue ] = useState(init);
   const onChange = e => {
@@ -22,6 +23,8 @@ function DeleteCharacter(){
       },
       body: JSON.stringify(body)
     });
+
+    //add a response to delete later
   };
 
   return(

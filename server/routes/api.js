@@ -12,9 +12,9 @@ router.post('/create',
 );
 
 // get character router
-router.get('/get',
+router.get('/load/:id',
   characterController.getCharacter,
-  (req,res) => res.status(200).json(res.locals.getCharacter));
+  (req,res) => res.status(200).json(res.locals.getCharacters));
 // router.get('/get',
 //   characterController.getCharacter,
 //   (req,res) => res.status(200).json(res.locals.getCharacters)
