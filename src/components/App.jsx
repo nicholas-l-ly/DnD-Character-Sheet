@@ -14,7 +14,7 @@ function App(){
 
   return(
     <div className='router'>
-      <h1>Solo Project</h1>
+      <h1>DND</h1>
       <main>
         <BrowserRouter>
           <Switch>

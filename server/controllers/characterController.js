@@ -65,9 +65,44 @@ characterController.getCharacter = (req,res,next) => {
 
 };
 
-characterController.updateCharacter = async (req,res,next) => {
+characterController.saveCharacter = async (req,res,next) => {
+  const {
+    name,
+    level,
+    classtype,
+    race,
+    total_hp,
+    current_hp,
+    strength,
+    dexterity,
+    constitution,
+    intelligence,
+    wisdom,
+    charisma,
+    speed,
+    initiative,
+    armor_class} = req.body;
 
-  return next();
+  model.Character.findOneAndUpdate({
+    name, level, classtype,
+    race, total_hp, current_hp, strength,
+    dexterity, constitution, intelligence, wisdom,
+    charisma, speed, initiative, armor_class
+  }).then(result => {res.locals.createCharacter = result;
+    return next();})
+    .catch(
+      (err) => {
+        return next(
+          {
+            log: 'Error caught in character creation MW',
+            status: 400,
+            message: {err: err}
+          }
+        );
+      }
+    );
+
+
 };
 
 characterController.deleteCharacter = async (req,res,next) => {
